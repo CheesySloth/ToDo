@@ -7,19 +7,22 @@
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #153677, #4e085f);
+    background: linear-gradient(135deg, #f8d1e9, #4e085f);
     padding: 10px;
 }
 .todo-app{
     width: 100%;
     max-width: 540px;
-    background: #fff;
+    background: #F5DCE0;
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
-    border-radius: 10px;
+    border-radius: 15px;
+    border-color: #555;
+    border-width: 2px;
+    border-style: solid;
 }
 .todo-app h2{
-    color: #002765;
+    color: #E18AAA;
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -28,7 +31,7 @@
     display: flex;
     align-items: center;
     justify-content:space-between;
-    background: #edeef0;
+    background: #EFCFD4;
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
@@ -46,7 +49,7 @@ button {
     padding: 16px 50px;
     color: #fff;
     cursor: pointer;
-    background: #ff5945;
+    background: #E18AAA;
     border-radius: 40px;
     font-size: 16px;
 }
@@ -84,11 +87,11 @@ ul li span{
     width: 40px;
     height: 40px;
     font-size: 22px;
-    color: #555;
+    color: #E4A0B7;
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
 }
 ul li span::hover{
- background: #edeef0;
+ background: #EFCFD4;
 }

@@ -1,5 +1,7 @@
 const inputBox = document.getElementById("input-box")
 const listContainer = document.getElementById("list-container")
+var input = document.getElementById("input-box")
+
 function addTask(){
     if(inputBox.value === '') {
         alert("Oops! You didn't write anything!")
@@ -34,4 +36,15 @@ function saveData(){
 function showTask(){
     listContainer.innerHTML = localStorage.getItem("data");
 }
+
+
 showTask();
+
+input.addEventListener("keypress", function(e){
+    if(e.key!=="Enter"){
+        return;
+    }
+    e.preventDefault();
+    document.getElementById("add-button").click();
+}
+);
