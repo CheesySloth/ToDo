@@ -1,28 +1,44 @@
+:root {
+    --clr-app-bg: #F5DCE0;
+    --clr-bg1: #f8d1e9;
+    --clr-bg2: #4e085f;
+    --clr-text: #ffffff;
+    --clr-heading: #E18AAA;
+    --clr-button: #E18AAA;
+    --clr-contrast: #555;
+    --clr-span: #E4A0B7;
+    --clr-row: #EFCFD4;
+    --clr-button-text: #fff;
+    --round-url: url(images/round.png);
+}
+
+
 * {
     margin: 0;
     padding: 0;
+    color: var(--clr-text);
     font-family: 'Poppins', sans-serif;
     box-sizing: border-box';
 }
 .container{
     width: 100%;
     min-height: 100vh;
-    background: linear-gradient(135deg, #f8d1e9, #4e085f);
+    background: linear-gradient(135deg, var(--clr-bg1), var(--clr-bg2));
     padding: 10px;
 }
 .todo-app{
     width: 100%;
     max-width: 540px;
-    background: #F5DCE0;
+    background: var(--clr-app-bg);
     margin: 100px auto 20px;
     padding: 40px 30px 70px;
     border-radius: 15px;
-    border-color: #555;
+    border-color: var(--clr-contrast);
     border-width: 2px;
     border-style: solid;
 }
 .todo-app h2{
-    color: #E18AAA;
+    color: var(--clr-heading);
     display: flex;
     align-items: center;
     margin-bottom: 20px;
@@ -31,7 +47,7 @@
     display: flex;
     align-items: center;
     justify-content:space-between;
-    background: #EFCFD4;
+    background: var(--clr-row);
     border-radius: 30px;
     padding-left: 20px;
     margin-bottom: 25px;
@@ -42,14 +58,15 @@ input {
     outline: none;
     background: transparent;
     padding: 10px;
+
 }
 button {
     border: none;
     outline: none;
     padding: 16px 50px;
-    color: #fff;
+    color: var(--clr-button-text);
     cursor: pointer;
-    background: #E18AAA;
+    background: var(--clr-button);
     border-radius: 40px;
     font-size: 16px;
 }
@@ -67,14 +84,15 @@ ul li::before{
     height:28px;
     width: 28px;
     border-radius: 50%;
-    background-image: url(images/round.png);
+    background-image: var(--round-url);
     background-size: cover;
     background-position: center;
     top: 12px;
     left: 8px;
+    border-color:#d2d3db;
 
 }ul li.checked{
-    color: #555;
+    color: var(--clr-contrast);
     text-decoration: line-through;
 }
 ul li.checked::before{
@@ -87,11 +105,136 @@ ul li span{
     width: 40px;
     height: 40px;
     font-size: 22px;
-    color: #E4A0B7;
+    color: var(--clr-span);
     line-height: 40px;
     text-align: center;
     border-radius: 50%;
 }
-ul li span::hover{
- background: #EFCFD4;
+ul li span:hover{
+ background: var(--clr-row);
+}
+.visually-hidden {
+    clip: rect(0 0 0 0);
+    clip-path: inset(50%);
+    height: 1px;
+    overflow: hidden;
+    position: absolute;
+    white-space: nowrap;
+    width: 1px;
+}
+
+.colour-picker {
+    background-color: var(--clr-heading);
+}
+
+.colour-picker > fieldset {
+    border: 0;
+    display: flex;
+    gap: 2rem;
+    width: fit-content;
+    background: var(--clr-heading);
+    padding: 1rem 3rem;
+    border-radius: 0 0 1rem 1rem;
+    margin-inline: auto;
+}
+
+.colour-picker input[type="radio"] {
+    appearance: none;
+    width: 1rem;
+    outline: 3px solid var(--radio-color, currentColor);
+    outline-offset: 1px;
+    border-radius: 50%;
+}
+
+.colour-picker input[type="radio"]:checked {
+    background-color: var(--radio-color);
+}
+
+.colour-picker input[type="radio"]#pink {
+    --radio-color: #F5DCE0;
+}
+
+.colour-picker input[type="radio"]#light {
+    --radio-color: #e4e5f1;
+}
+
+.colour-picker input[type="radio"]#dark {
+    --radio-color: #456080;
+}
+
+.colour-picker input[type="radio"]#monokai {
+    --radio-color: #242827;
+}
+
+.colour-picker input[type="radio"]#green {
+    --radio-color: #D5E5D5;
+}
+
+:root:has(#pink:checked){
+    --clr-app-bg: #F5DCE0;
+    --clr-bg1: #f8d1e9;
+    --clr-bg2: #4e085f;
+    --clr-text: #000000;
+    --clr-heading: #E18AAA;
+    --clr-button: #E18AAA;
+    --clr-contrast: #555;
+    --clr-span: #E4A0B7;
+    --clr-row: #EFCFD4;
+    --clr-button-text: #fff;
+}
+
+:root:has(#Light:checked){
+    --clr-app-bg: #e4e5f1;
+    --clr-bg1: #d2d3db;
+    --clr-bg2: #484b6a;
+    --clr-text: #000000;
+    --clr-heading: #484b6a;
+    --clr-button: #484b6a;
+    --clr-contrast: #555;
+    --clr-span: #9394a5;
+    --clr-row: #d2d3db;
+    --clr-button-text: #fff;
+}
+
+:root:has(#dark:checked){
+    --clr-app-bg: #456080;
+    --clr-bg1: #264163;
+    --clr-bg2: #081425;
+    --clr-text: #fff;
+    --clr-heading: #e3e3e3;
+    --clr-button: #243E61;
+    --clr-contrast: #99A7B5;
+    --clr-span: #243E61;
+    --clr-row: #6C87A8;
+    --clr-button-text: #fff;
+    --round-url: url(images/white-round.png);
+}
+
+:root:has(#monokai:checked){
+    --clr-app-bg: #2e2e2e;
+    --clr-bg1: #78928d;
+    --clr-bg2: #242827;
+    --clr-text: #d6d6d6;
+    --clr-heading: #e5b567;
+    --clr-button: #e5b567;
+    --clr-contrast: #797979;
+    --clr-span: #e87d3e;
+    --clr-row: #797979;
+    --clr-button-text: #fff;
+    --round-url: url(images/white-round.png);
+
+
+}
+
+:root:has(#green:checked){
+    --clr-app-bg: #D5E5D5;
+    --clr-bg1: #C7D9DD;
+    --clr-bg2: #ADB2D4;
+    --clr-text: #000;
+    --clr-heading: #636883;
+    --clr-button: #636883;
+    --clr-contrast: #555;
+    --clr-span: #ADB2D4;
+    --clr-row: #EEF1DA;
+    --clr-button-text: #fff;
 }
